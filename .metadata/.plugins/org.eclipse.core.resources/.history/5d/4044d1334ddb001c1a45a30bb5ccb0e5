@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head th:insert="@{/fragments/header.html}::head">
+<meta charset="UTF-8">
+<title>Catálogo</title>
+</head>
+<body>
+	<header th:replace="@{fragments/header.html} :: header" />
+
+	<form action='/catalogo' method="get">
+		<select name="select" class="btn btn-light text-dark me-2" >
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="25">25</option>
+			<option value="50">50</option>
+			<option value="100">100</option>
+		</select> <input type="submit" value="buscar" class="btn btn-light text-dark me-2" >
+	</form>
+	
+	<!-- 	<table>
+		<tr>
+			<td>nombre</td>
+			<td>descripcion</td>
+			<td>precio</td>
+			<td>stock</td>
+
+			<td>imagen</td>
+		</tr>
+		<tr th:each="producto : ${lista}">
+			<td th:text="${producto.nombre}"></td>
+			<td th:text="${producto.descripcion}"></td>
+			<td th:text="${producto.precio}"></td>
+			<td th:text="${producto.stock}"></td>
+			<td th:text="${producto.imagen}"></td>
+			<td><a th:href="'/meterAlCarrito?producto='+${producto.id}">
+					añadir</a></td>
+		
+		</tr>
+	</table>-->
+	<div style="display: inline-flex;" th:each="producto : ${lista}">
+
+		<div class="card" style="width: 18rem;">
+
+			<div class="card-body">
+				<h5 class="card-title" th:text="${producto.nombre}"></h5>
+				<h6 class="card-subtitle mb-2 text-muted" th:text="${producto.id_categoria.nombre}"></h6>
+				<p class="card-text" th:text="${producto.descripcion}"></p>
+				<a th:href="'/verDetalles?producto='+${producto.id}" class="btn btn-light text-dark me-2">Ver detalles</a> 
+				<a th:href="'/meterAlCarrito?producto='+${producto.id}" class="btn btn-light text-dark me-2">Añadir</a>
+			</div>
+		</div>
+
+	</div>
+
+	<!--
+	<div th:each="i:${#numbers.sequence(0,numPaginas)}" style="display:inline;">
+		<a
+			th:href="'/catalogo?paginaActual='+${i+1}+'&prodPorPag='+${prodPorPag}" th:text="${i+1}"></a>
+	</div>
+-->
+	<div>
+		<button class="btn btn-light text-dark me-2" value="Anterior">
+			<a th:href="'/catalogo?paginaActual='+${anterior}+'&prodPorPag='+${prodPorPag}" class="btn btn-light text-dark me-2">Anterior</a>
+		</button>
+
+
+		<button class="btn btn-light text-dark me-2" value="Anterior">
+			<a th:href="'/catalogo?paginaActual='+${siguiente}+'&prodPorPag='+${prodPorPag}" class="btn btn-light text-dark me-2">Siguiente</a>
+		</button>
+		<form action="/carrito" method="get">
+			<input type="submit" value="Ir al carrito" class="btn btn-light text-dark me-2" >
+		</form>
+	</div>
+	<footer th:replace="@{fragments/footer.html} :: footer" />
+</body>
+</html>

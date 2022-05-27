@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\Users\dgay\OneDrive - Grupo VASS\Documents\Spring4.3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2662839205.index
+\TIENDA_DANIEL_GAY_MOYANO\src\main\java
+C:\Users\dgay\OneDrive - Grupo VASS\Documents\Spring4.3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2594970235.index
+\TIENDA_DANIEL_GAY_MOYANO\src\main\java
+C:\Users\dgay\OneDrive - Grupo VASS\Documents\Spring4.3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3429538743.index
+\TIENDA_DANIEL_GAY_MOYANO\src\main\java

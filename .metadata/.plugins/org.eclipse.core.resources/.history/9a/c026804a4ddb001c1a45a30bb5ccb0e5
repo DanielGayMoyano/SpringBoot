@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head th:insert="@{/fragments/header.html}::head">
+<meta charset="UTF-8">
+<title>Catálogo</title>
+</head>
+<body>
+	<header th:replace="@{fragments/header.html} :: header" />
+
+
+	
+
+	<div style="display: inline-flex;" th:each="producto : ${lista}">
+
+		<div class="card" style="width: 18rem;">
+
+			<div class="card-body">
+				<h5 class="card-title" th:text="${producto.nombre}"></h5>
+				<h6 class="card-subtitle mb-2 text-muted" th:text="${producto.id_categoria.nombre}"></h6>
+				<p class="card-text" th:text="${producto.descripcion}"></p>
+				<a th:href="'/verDetalles?producto='+${producto.id}" class="btn btn-light text-dark me-2">Ver detalles</a> 
+				<a th:href="'/meterAlCarrito?producto='+${producto.id}" class="btn btn-light text-dark me-2">Añadir</a>
+			</div>
+		</div>
+
+	</div>
+
+	<!--
+	<div th:each="i:${#numbers.sequence(0,numPaginas)}" style="display:inline;">
+		<a
+			th:href="'/catalogo?paginaActual='+${i+1}+'&prodPorPag='+${prodPorPag}" th:text="${i+1}"></a>
+	</div>
+-->
+	<div>
+		<button class="btn btn-light text-dark me-2" value="Anterior">
+			<a th:href="'/catalogo?paginaActual='+${anterior}+'&prodPorPag='+${prodPorPag}" class="btn btn-light text-dark me-2">Anterior</a>
+		</button>
+
+
+		<button class="btn btn-light text-dark me-2" value="Anterior">
+			<a th:href="'/catalogo?paginaActual='+${siguiente}+'&prodPorPag='+${prodPorPag}" class="btn btn-light text-dark me-2">Siguiente</a>
+		</button>
+		<form action="/carrito" method="get">
+			<input type="submit" value="Ir al carrito" class="btn btn-light text-dark me-2" >
+		</form>
+	</div>
+	<footer th:replace="@{fragments/footer.html} :: footer" />
+</body>
+</html>

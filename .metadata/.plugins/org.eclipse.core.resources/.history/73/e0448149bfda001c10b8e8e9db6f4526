@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:insert="@{/fragments/header.html}::head">
+<body>
+
+	<!-- Header
+  
+  <div th:include="fragments/template_usuario.html :: header-logueado" th:unless="${sesion==null}"></div>
+   -->
+	<header th:replace="@{fragments/header.html} :: header" />
+
+
+
+
+	<!-- Page Content -->
+	<div class="container">
+
+
+		<!-- Page Heading/Breadcrumbs -->
+		<div class="mt-4 mb-3"></div>
+
+		<ol class="breadcrumb">
+
+			<li class="breadcrumb-item active">Detalle del producto</li>
+		</ol>
+
+		<!-- Blog Post -->
+		<div class="card mb-4">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-12">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Nombre</th>
+									<th scope="col">Descripción</th>
+									<th scope="col">Precio</th>
+									<th scope="col">Acción</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td th:text="${producto.nombre}"></td>
+									<td th:text="${producto.descripcion}"></td>
+									<td th:text="${producto.precio}+'€'"></td>
+									<td><button class="btn btn-light text-dark me-2"
+											value="Añadir">
+											<a th:href="'/meterAlCarrito?producto='+${producto.id}"
+												class="btn btn-light text-dark me-2">Añadir</a>
+										</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.container -->
+
+	<!-- Footer -->
+	<footer th:replace="@{fragments/footer.html} :: footer" />
+
+	<!-- Bootstrap core JavaScript -->
+
+
+</body>
+
+</html>
+

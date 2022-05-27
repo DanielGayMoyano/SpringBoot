@@ -1,0 +1,5 @@
+package curso.java.tienda.model.repository;
+
+public class CategoriasRepository {
+
+}

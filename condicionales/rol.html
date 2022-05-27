@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:if="${session.usuario} != null">
+		<p th:text="${session.usuario.rol}==1 ? 'pepe' : 'juan'">usuario</p>
+		
+		<div th:switch="${session.usuario.rol}">
+	  		<div th:case="1">
+	  		  	<ul>
+	  				<li><a href="#">Listar usuarios</a></li>
+	  				<li><a href="#">Listar productos</a></li>
+	  				<li><a href="#">Ver perfil</a></li>
+	  			</ul>
+	  		</div>
+	  		<div th:case="2">
+	  			<ul>
+	  				<li><a href="#">Listar productos</a></li>
+	  				<li><a href="#">Ver perfil</a></li>
+	  			</ul>
+	  		</div>
+		</div>
+	</div>
+	<div th:else>
+		<a href="#">Login</a>
+	</div>
+</body>
+</html>

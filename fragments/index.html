@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="@{/fragments/layout.html} :: head"/>
+<body>
+	<h1>Fragments</h1>
+
+	<!-- FRAGMENTS -->
+	<!-- insert -->
+	<div th:insert="@{fragments/layout.html} :: footer"></div>
+
+	<br><br>
+
+	<!-- replace -->
+	<div th:replace="@{fragments/layout.html} :: footer"></div>
+
+	<br><br>
+
+	<!-- include -->
+	<div th:include="@{fragments/layout.html} :: footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+package curso.java.tienda.controllers;
+
+public class AdminController {
+
+}

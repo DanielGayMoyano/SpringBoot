@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head th:insert="@{/fragments/header.html}::head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="@{fragments/header.html} :: header" />
+
+		<div style="display: inline-flex;" th:each="pedido : ${listaPedidos}">
+
+		<div class="card" style="width: 18rem;">
+
+			<div class="card-body">
+				<h5 class="card-title" th:text="${pedido.num_Factura}"></h5>
+				<h6 class="card-subtitle mb-2 text-muted" th:text="${pedido.estado}"></h6>
+				<p class="card-text" th:text="'Total: '+${pedido.total}+'€'"></p>
+				<p class="card-text" th:text="${pedido.fecha}"></p>
+			<a th:href="'/verDetallesPedido?pedido='+${pedido.id}" class="btn btn-light text-dark me-2">Ver detalles</a> 
+			</div>
+		</div>
+
+	</div>
+	
+	<footer th:replace="@{fragments/footer.html} :: footer" />
+</body>
+</html>

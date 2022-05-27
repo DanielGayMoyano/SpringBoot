@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head th:insert="@{/fragments/header.html}::head">
+<meta charset="UTF-8">
+<title>Index</title>
+</head>
+
+<body>
+	<header th:replace="@{fragments/header.html} :: header" th:if="${session.usuario.id_rol.id==1||session.usuario.id_rol==null}"/>
+	<header th:replace="@{fragments/headerAdmin.html} :: headerAdmin" th:if="${session.usuario.id_rol.id==3}"></header>
+	<footer th:replace="@{fragments/footer.html} :: footer" />
+</body>
+</html>

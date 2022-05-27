@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- https://www.baeldung.com/spring-thymeleaf-conditionals -->
+	<div th:if="${session.usuario} != null">
+		<p th:text="${session.usuario.nombre}">usuario</p>
+	</div>
+	<div th:unless="${session.usuario} != null">
+		<a href="#">Login</a>
+	</div>
+	
+	<div th:if="${session.usuario} == null">
+		<a href="#">Login</a>
+	</div>
+</body>
+</html>

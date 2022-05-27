@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head th:insert="@{/fragments/header.html}::head">
+<meta charset="UTF-8">
+<title>Detalles de pedidos</title>
+</head>
+<body>
+	<header th:replace="@{fragments/header.html} :: header" />
+	<div class="container">
+
+
+		<!-- Page Heading/Breadcrumbs -->
+		<div class="mt-4 mb-3"></div>
+
+		<ol class="breadcrumb">
+
+			<li class="breadcrumb-item active">Detalle del pedido</li>
+		</ol>
+
+		<!-- Blog Post -->
+		<div class="card mb-4">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-12">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Nombre del producto</th>
+									<th scope="col">Unidades</th>
+									<th scope="col">Precio</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="detalle:${lista}">
+									<td th:text="${detalle.id_producto.nombre}"></td>
+									<td th:text="${detalle.unidades}"></td>
+									<td th:text="${detalle.precio_unidad}+'€'"></td>
+
+								</tr>
+
+								<tr>
+									<th scope="col">Total</th>
+
+									<td></td>
+									<th scope="col" th:text="${total}+'€'"></th>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button type="button" class="btn btn-light text-dark me-2">
+		<a th:href="@{/cancelarPedido}" class="btn btn-light text-dark me-2">Cancelar
+			pedido</a>
+
+	</button>
+	<footer th:replace="@{fragments/footer.html} :: footer" />
+</body>
+</html>

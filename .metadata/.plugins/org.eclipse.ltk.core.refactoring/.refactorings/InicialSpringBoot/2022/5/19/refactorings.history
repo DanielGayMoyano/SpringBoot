@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;curso.spring.model&apos; to &apos;Ejercicio3/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;InicialSpringBoot&apos;&#x0D;&#x0A;- Destination element: &apos;Ejercicio3/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;InicialSpringBoot/src/main/java/curso.spring.model&apos;" description="Copy package" destination="=Ejercicio3/src\/main\/java" element1="/src\/main\/java&lt;curso.spring.model" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1652271847504" version="1.0"/>
+</session>

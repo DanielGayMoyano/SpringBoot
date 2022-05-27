@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head th:insert="@{/fragments/header.html}::head">
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<header th:replace="@{fragments/header.html} :: header" />
+	
+
+	<footer th:replace="@{fragments/footer.html} :: footer" />
+</body>
+</html>

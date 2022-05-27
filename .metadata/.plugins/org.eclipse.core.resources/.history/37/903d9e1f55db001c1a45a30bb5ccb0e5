@@ -1,0 +1,18 @@
+package curso.java.tienda.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import curso.java.tienda.utils.Routes;
+
+@Controller
+@RequestMapping(value = "/admin", method = { RequestMethod.GET, RequestMethod.POST })
+public class AdminController {
+	@GetMapping("/nuevoProducto")
+	public String nuevoProducto(Model model) {
+	return Routes.NUEVO_PRODUCTO;	
+	}
+}

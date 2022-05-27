@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head th:insert="@{/fragments/header.html}::head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="@{fragments/header.html} :: header" />
+
+	<div th:replace="@{productos/carrito.html} :: carrito"></div>
+	<form action="/crearPedido" method="get">
+		<div class="my-3">
+			<div class="form-check">
+				<input id="credit" name="paymentMethod" type="radio"
+					class="form-check-input" value="tarjeta" checked required> <label
+					class="form-check-label" for="credit">Tarjeta</label>
+			</div>
+			
+			<div class="form-check">
+				<input id="paypal" name="paymentMethod" type="radio"
+					class="form-check-input" value="paypal" required> <label
+					class="form-check-label" for="paypal">PayPal</label>
+			</div>
+		</div>
+		<input class="btn btn-light text-dark me-2" type="submit" value="Confirmar pago">
+	</form>
+	<footer th:replace="@{fragments/footer.html} :: footer" />
+</body>
+</html>
